@@ -1,4 +1,3 @@
-"use client";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
@@ -22,24 +21,19 @@ import {
   Route,
   BookMarked,
   BookType,
+  TicketCheck,
+  BriefcaseBusiness,
 } from "lucide-react";
 import { motion, AnimatePresence, useScroll } from "framer-motion";
 import { logo } from "../../assets";
 
 const NavItems = [
   { id: 1, title: "Home", href: "/", icon: <Home className="h-4 w-4" /> },
-  { id: 2, title: "About", href: "#about", icon: <Info className="h-4 w-4" /> },
   {
     id: 3,
     title: "Teams",
     href: "/teams",
     icon: <Users2 className="h-4 w-4" />,
-  },
-  {
-    id: 4,
-    title: "Contact",
-    href: "#footer",
-    icon: <Phone className="h-4 w-4" />,
   },
   {
     id: 5,
@@ -67,6 +61,12 @@ const MoreLinks = [
     title: "Community",
     href: "/community",
     icon: <Globe className="h-4 w-4" />,
+  },
+  {
+    id: 2,
+    title: "Internship",
+    href: "/internships",
+    icon: <BriefcaseBusiness className="h-4 w-4" />,
   },
   {
     id: 3,
@@ -103,6 +103,12 @@ const MoreLinks = [
     title: "Career",
     href: "/career",
     icon: <Route className="h-4 w-4" />,
+  },
+  {
+    id: 9,
+    title: "My Tickets",
+    href: "/tickets",
+    icon: <TicketCheck className="h-4 w-4" />,
   },
 ];
 
@@ -143,7 +149,12 @@ const AdminLinks = [
     href: "/admin/blog",
     icon: <BookType className="h-4 w-4" />,
   },
-  
+  {
+    id: 7,
+    title: "Internship Management",
+    href: "/admin/internships",
+    icon: <BriefcaseBusiness className="h-4 w-4" />,
+  },
 ];
 
 const Navbar = () => {
@@ -208,7 +219,7 @@ const Navbar = () => {
             transition: { type: "spring", stiffness: 100, damping: 10 },
           }}
           transition={{ duration: 0.8 }}
-          className="flex items-center justify-between w-[97%] mx-auto z-50 rounded-xl py-1 pl-2 pr-12 h-fit fixed top-4 space-x-4 shadow-lg bg-opacity-80"
+          className="flex items-center justify-between w-[97%] mx-auto z-50 rounded-xl py-1 pl-2 pr-12 h-fit fixed top-4 space-x-4 shadow-lg bg-opacity-80 backdrop-blur-sm"
         >
           <div className="flex items-center">
             <img src={logo} alt="logo" className="w-16 h-16 rounded-full" />
@@ -221,6 +232,7 @@ const Navbar = () => {
                 to={item.href}
                 onClick={(e) => {
                   if (item.title === "More") {
+                    e.preventDefault();
                     setShowMoreModal(true);
                   } else {
                     handleNavClick(e, item.href);
@@ -235,13 +247,15 @@ const Navbar = () => {
 
             {currentUser ? (
               <>
-                <button
-                  onClick={() => setShowAdminModal(true)}
-                  className="flex gap-2 items-center text-white hover:text-red-500"
-                >
-                  <ShieldCheck className="h-4 w-4" />
-                  Admin
-                </button>
+                {currentUser.role === "admin" && (
+                  <button
+                    onClick={() => setShowAdminModal(true)}
+                    className="flex gap-2 items-center text-white hover:text-red-500"
+                  >
+                    <ShieldCheck className="h-4 w-4" />
+                    Admin
+                  </button>
+                )}
                 <button
                   onClick={logout}
                   className="text-red-500 hover:text-red-600 transition-transform"
@@ -250,12 +264,26 @@ const Navbar = () => {
                 </button>
               </>
             ) : (
-              <Link
-                to="/login"
-                className="text-white hover:text-red-500 transition-transform"
-              >
-                Login
-              </Link>
+              <>
+                <Link
+                  to="/admin/login"
+                  className="text-white hover:text-red-500 transition-transform"
+                >
+                  Admin Login
+                </Link>
+                <Link
+                  to="/login"
+                  className="text-white hover:text-red-500 transition-transform"
+                >
+                  Login
+                </Link>
+                <Link
+                  to="/sign-up"
+                  className="text-white hover:text-red-500 transition-transform"
+                >
+                  Sign Up
+                </Link>
+              </>
             )}
           </div>
         </motion.div>
@@ -278,22 +306,24 @@ const Navbar = () => {
         </ul>
       </Modal>
 
-      <Modal show={showAdminModal} onClose={() => setShowAdminModal(false)}>
-        <ul className="space-y-4">
-          {AdminLinks.map((link) => (
-            <li key={link.id} className="flex items-center gap-3">
-              {link.icon}
-              <Link
-                to={link.href}
-                className="text-white hover:underline"
-                onClick={() => setShowAdminModal(false)}
-              >
-                {link.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </Modal>
+      {currentUser?.role === "admin" && (
+        <Modal show={showAdminModal} onClose={() => setShowAdminModal(false)}>
+          <ul className="space-y-4">
+            {AdminLinks.map((link) => (
+              <li key={link.id} className="flex items-center gap-3">
+                {link.icon}
+                <Link
+                  to={link.href}
+                  className="text-white hover:underline"
+                  onClick={() => setShowAdminModal(false)}
+                >
+                  {link.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Modal>
+      )}
     </AnimatePresence>
   );
 };
