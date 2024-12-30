@@ -16,7 +16,7 @@ export const generateTicketPDF = async (ticketData) => {
     size: 20,
   });
 
-  // Add QR code
+  // Add QR coded
   const qrCodeImage = await pdfDoc.embedPng(qrCodeData);
   page.drawImage(qrCodeImage, {
     x: 300,
