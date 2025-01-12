@@ -17,13 +17,33 @@ const opportunities = [
     description:
       "Start your HR career with hands-on training, internship experience, and job placement support in top companies.",
   },
-  {
+  const nodeshieldCybrex = {
     id: "nodeshield-cybrex",
     type: "Industrial Training",
     title: "Nodeshield Cybrex Program - Cybersecurity (Powered by Mittal Alliance)",
     description:
       "Dive into the world of cybersecurity with our Nodeshield Cybrex Program. Learn core concepts like network security, ethical hacking, and incident response while gaining hands-on experience. Unlock industrial opportunities with top cybersecurity firms.",
-  },
+    applicationLink: "https://nodeshield.in",
+  };
+  
+  // Example rendering code
+  function ProgramCard({ program }) {
+    return (
+      <div className="program-card">
+        <h2>{program.title}</h2>
+        <p>{program.description}</p>
+        <button
+          onClick={() => window.open(program.applicationLink, "_blank")}
+          className="apply-now-btn"
+        >
+          Apply Now
+        </button>
+      </div>
+    );
+  }
+  
+  // Rendering the program card
+  <ProgramCard program={nodeshieldCybrex} />;
   
 ];
 
