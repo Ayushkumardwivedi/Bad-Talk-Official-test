@@ -128,7 +128,7 @@ const programs = {
     outcomes: [
       "Professional HR certification",
       "Practical industry experience",
-      "Strong HR foundation",
+      "Strong HR foundations",
       "Professional network",
       "Career opportunities",
     ],
