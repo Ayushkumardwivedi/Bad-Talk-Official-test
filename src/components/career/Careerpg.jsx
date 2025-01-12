@@ -17,6 +17,14 @@ const opportunities = [
     description:
       "Start your HR career with hands-on training, internship experience, and job placement support in top companies.",
   },
+  {
+    id: "nodeshield-cybrex",
+    type: "Industrial Training",
+    title: "Nodeshield Cybrex Program - Cybersecurity",
+    description:
+      "Dive into the world of cybersecurity with our Nodeshield Cybrex Program. Learn core concepts like network security, ethical hacking, and incident response while gaining hands-on experience. Unlock industrial opportunities with top cybersecurity firms.",
+  },
+  
 ];
 
 function Careerpg() {
