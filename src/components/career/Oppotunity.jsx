@@ -134,6 +134,30 @@ const programs = {
     ],
     applicationLink: "/apply/bizeeHR",
   },
+  nodeshieldCybrex: {
+    id: "nodeshieldCybrex",
+    title: "Nodeshield Cybrex Program",
+    tagline: "Master Cybersecurity with Industrial Expertise",
+    type: "Training",
+    description:
+      "An advanced program designed to impart in-depth knowledge of cybersecurity concepts and provide industrial exposure, preparing participants for high-demand roles in the cybersecurity domain.",
+    eligibility: "Open to all",
+    overview: [
+      "Comprehensive cybersecurity training",
+      "Real-world industrial exposure",
+      "Industry placement support",
+      "Professional certification",
+    ],
+    outcomes: [
+      "Professional cybersecurity certification",
+      "Practical industry experience",
+      "Strong foundation in cybersecurity",
+      "Access to a professional network",
+      "Lucrative career opportunities",
+    ],
+    applicationLink: "https://nodeshield.in",
+  },
+  
 };
 
 const OpportunityPage = () => {
