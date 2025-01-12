@@ -135,7 +135,7 @@ const programs = {
     applicationLink: "/apply/bizeeHR",
   },
   nodeshieldCybrex: {
-    id: "nodeshieldCybrex",
+    id: "nodeshield-cybrex",
     title: "Nodeshield Cybrex Program",
     tagline: "Master Cybersecurity with Industrial Expertise",
     type: "Training",
