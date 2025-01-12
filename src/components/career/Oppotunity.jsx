@@ -128,11 +128,11 @@ const programs = {
     outcomes: [
       "Professional HR certification",
       "Practical industry experience",
-      "Strong HR foundations",
+      "Strong HR foundation",
       "Professional network",
       "Career opportunities",
     ],
-    applicationLink: "https://www.bizee.in/",
+    applicationLink: "/apply/bizeeHR",
   },
   nodeshieldCybrex: {
     id: "nodeshieldCybrex",
@@ -157,6 +157,7 @@ const programs = {
     ],
     applicationLink: "https://nodeshield.in",
   },
+  
   
 };
 
