@@ -6,7 +6,7 @@ const opportunities = [
   {
     id: "drift",
     type: "Industrial Training",
-    title: "DRIFT Program - Drone Technology (Powered by Mittal Alliance)",
+    title: "DRIFT Industrial Labs - Drone Technology (Powered by Mittal Alliance)",
     description:
       "Join our comprehensive drone training program covering operations, safety, and maintenance. Get certified and placed with leading drone companies.",
   },
@@ -20,10 +20,18 @@ const opportunities = [
   {
     id: "nodeshield-cybrex (Powered by Mittal Alliance)",
     type: "Industrial Training",
-    title: "Nodeshield Cybrex Program - Cybersecurity ",
+    title: "Nodeshield Industrial Labs - Cybersecurity ",
     description:
       "Dive into the world of cybersecurity with our Nodeshield Cybrex Program. Learn core concepts like network security, ethical hacking, and incident response while gaining hands-on experience. Unlock industrial opportunities with top cybersecurity firms.",
   },
+  {
+  id: "bad-talks-ceo-summit",
+  type: "Event",
+  title: "BAD TALKS - THE CEO Summit (Powered by Mittal)",
+  description:
+    "Join the exclusive CEO Summit where industry leaders share insights, experiences, and strategies. Network with top executives and gain invaluable knowledge to drive your career forward.",
+}
+
   
 ];
 
