@@ -132,7 +132,7 @@ const programs = {
       "Professional network",
       "Career opportunities",
     ],
-    applicationLink: "/apply/bizeeHR",
+    applicationLink: "https://www.bizee.in/",
   },
   nodeshieldCybrex: {
     id: "nodeshieldCybrex",
