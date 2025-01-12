@@ -6,21 +6,21 @@ const opportunities = [
   {
     id: "drift",
     type: "Industrial Training",
-    title: "DRIFT Program - Drone Technology",
+    title: "DRIFT Program - Drone Technology (Powered by Mittal Alliance)",
     description:
       "Join our comprehensive drone training program covering operations, safety, and maintenance. Get certified and placed with leading drone companies.",
   },
   {
     id: "bizeeHR",
     type: "Industrial Training",
-    title: "BizeeHR Industrial Program",
+    title: "BizeeHR Industrial Program (Powered by Mittal Alliance) ",
     description:
       "Start your HR career with hands-on training, internship experience, and job placement support in top companies.",
   },
   {
     id: "nodeshield-cybrex",
     type: "Industrial Training",
-    title: "Nodeshield Cybrex Program - Cybersecurity",
+    title: "Nodeshield Cybrex Program - Cybersecurity (Powered by Mittal Alliance)",
     description:
       "Dive into the world of cybersecurity with our Nodeshield Cybrex Program. Learn core concepts like network security, ethical hacking, and incident response while gaining hands-on experience. Unlock industrial opportunities with top cybersecurity firms.",
   },
